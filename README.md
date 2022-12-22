@@ -51,23 +51,23 @@ UserOperationClaim.Read
 
 ## :fire:"Project Log for SoftResume:fire:
 
--*3rd Week: CRUD operation was implemented for programming languages presence.
--*3rd Week: Business rules operation was implemented for programming languages.
--*3rd Week: Validation operation was implemented for programming languages.
--*3rd Week: Summary added.
--*3rd Week: Refactoring done.
--*4th Week: The presence of technologies for programming languages was added to the system. CRUD operation was implemented. For example; Java: Spring, JSP. C#: WPF, ASP.NET, JavaScript: Vue, React.
--*4th Week: Using the Core Packages infrastructure, the login and registration system was integrated into the system (JWT).
--*4th Week: Social media presence was added for users, CRUD operation was implemented (Github).
--*4th Week: Swagger Doc Bearer (Authorize) was added.
--*4th Week: Summary added.
--*4th Week: Refactoring done.
--*5th Week: Authentication structure was corrected again.
--*5th Week: Operation Claim was set to be able to add, delete, update and list.
--*5th Week: User Operation Claim was set to be able to add, delete, update and list.
--*5th Week: Constant added for role definitions.
--*5th Week: Summary added.
--*5th Week: Refactoring done."
+- *3rd Week CRUD operation was implemented for programming languages presence.*
+- *3rd Week Business rules operation was implemented for programming languages.*
+- *3rd Week Validation operation was implemented for programming languages.*
+- *3rd Week Summary added.*
+- *3rd Week Refactoring done.*
+- *4th Week The presence of technologies for programming languages was added to the system. CRUD operation was implemented. For example; Java: Spring, JSP. C#: WPF, ASP.NET, JavaScript: Vue, React.*
+- *4th Week Using the Core Packages infrastructure, the login and registration system was integrated into the system (JWT).*
+- *4th Week Social media presence was added for users, CRUD operation was implemented (Github).*
+- *4th Week Swagger Doc Bearer (Authorize) was added.*
+- *4th Week Summary added.*
+- *4th Week Refactoring done.*
+- *5th Week Authentication structure was corrected again.*
+- *5th Week Operation Claim was set to be able to add, delete, update and list.*
+- *5th Week User Operation Claim was set to be able to add, delete, update and list.*
+- *5th Week Constant added for role definitions.*
+- *5th Week Summary added.*
+- *5th Week Refactoring done."*
   <br>
 
 ## :pencil2:Authors

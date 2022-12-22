@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.UserSocialMediaAddresses.Queries.GetListUserSocialMediaAddressByDynamic
 {
-    /// <summary>
+    /// <summary > 
     /// Tüm kullanıcıların sosyal medya adresi isteği
     /// </summary>
     public class GetListUserSocialMediaAddressByDynamicQuery : IRequest<UserSocialMediaAddressListModel>, ISecuredRequest

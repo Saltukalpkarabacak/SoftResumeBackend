@@ -22,7 +22,8 @@ namespace Application.Features.OperationClaims.Commands.DeleteOperationClaim
         public string[] Roles { get; } =
         {
         OperationClaimRoles.OperationClaimAdmin,
-        OperationClaimRoles.OperationClaimDelete
+        OperationClaimRoles.OperationClaimDelete,
+        OperationClaimRoles.Admin
     };
 
         /// <summary>

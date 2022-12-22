@@ -23,7 +23,8 @@ namespace Application.Features.OperationClaims.Commands.UpdateOperationClaim
         public string[] Roles { get; } =
         {
         OperationClaimRoles.OperationClaimAdmin,
-        OperationClaimRoles.OperationClaimUpdate
+        OperationClaimRoles.OperationClaimUpdate,
+        OperationClaimRoles.Admin
     };
 
         /// <summary>

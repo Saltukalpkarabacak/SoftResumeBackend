@@ -22,7 +22,8 @@ namespace Application.Features.OperationClaims.Queries.GetListOperationClaim
         public string[] Roles { get; } =
         {
         OperationClaimRoles.OperationClaimAdmin,
-        OperationClaimRoles.OperationClaimRead
+        OperationClaimRoles.OperationClaimRead,
+        OperationClaimRoles.Admin
     };
 
         /// <summary>

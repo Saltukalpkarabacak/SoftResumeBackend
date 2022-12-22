@@ -18,14 +18,15 @@ namespace Application.Features.OperationClaims.Commands.CreateOperationClaim
     /// <summary>
     /// Operasyon claim oluşturma komutu
     /// </summary>
-    public class CreateOperationClaimCommand : IRequest<CreatedOperationClaimDto>/*, ISecuredRequest*/
+    public class CreateOperationClaimCommand : IRequest<CreatedOperationClaimDto>, ISecuredRequest
     {
         public string Name { get; set; }
-        //    public string[] Roles { get; } =
-        //    {
-        //    OperationClaimRoles.OperationClaimAdmin,
-        //    OperationClaimRoles.OperationClaimCreate
-        //};
+        public string[] Roles { get; } =
+        {
+            OperationClaimRoles.OperationClaimAdmin,
+            OperationClaimRoles.OperationClaimCreate,
+            OperationClaimRoles.Admin
+        };
 
         /// <summary>
         /// Operasyon claim oluşturma işleyicisi

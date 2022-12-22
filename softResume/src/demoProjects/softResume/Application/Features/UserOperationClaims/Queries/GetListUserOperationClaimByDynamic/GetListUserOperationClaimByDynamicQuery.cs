@@ -19,15 +19,16 @@ namespace Application.Features.UserOperationClaims.Queries.GetListUserOperationC
     /// <summary>
     /// Kullanıcı Operasyon Claim için sorgu sınıfı
     /// </summary>
-    public class GetListUserOperationClaimByDynamicQuery : IRequest<UserOperationClaimListModel>/*, ISecuredRequest*/
+    public class GetListUserOperationClaimByDynamicQuery : IRequest<UserOperationClaimListModel>, ISecuredRequest
     {
         public Dynamic Dynamic { get; set; }
         public PageRequest PageRequest { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserOperationClaimRoles.UserOperationClaimAdmin,
-    //    UserOperationClaimRoles.UserOperationClaimRead
-    //};
+        public string[] Roles { get; } =
+        {
+        UserOperationClaimRoles.UserOperationClaimAdmin,
+        UserOperationClaimRoles.UserOperationClaimRead,
+        UserOperationClaimRoles.Admin
+    };
 
         public class GetListUserOperationClaimByDynamicQueryHandler : IRequestHandler<GetListUserOperationClaimByDynamicQuery, UserOperationClaimListModel>
         {

@@ -1,4 +1,5 @@
-﻿using Application.Features.ProgrammingLanguageTechnologies.Dtos;
+﻿using Application.Features.ProgrammingLanguageTechnologies.Constants;
+using Application.Features.ProgrammingLanguageTechnologies.Dtos;
 using Application.Features.ProgrammingLanguageTechnologies.Rules;
 using Application.Services;
 using AutoMapper;
@@ -16,15 +17,16 @@ namespace Application.Features.ProgrammingLanguageTechnologies.Commands.CreatePr
     /// <summary>
     /// Programlama dili Teknolojisi Oluşturma Komutu
     /// </summary>
-    public class CreateProgrammingLanguageTechnologyCommand : IRequest<CreatedProgrammingLanguageTechnologyDto>/*, ISecuredRequest*/
+    public class CreateProgrammingLanguageTechnologyCommand : IRequest<CreatedProgrammingLanguageTechnologyDto>, ISecuredRequest
     {
         public int ProgrammingLanguageId { get; set; }
         public string Name { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyCreate
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyCreate,
+        ProgrammingLanguageTechnologyRoles.Admin
+    };
 
         /// <summary>
         /// Programlama dili teknolojisi oluşturmak için kullanılan işleyici sınıfıdır.

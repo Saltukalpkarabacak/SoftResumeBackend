@@ -1,4 +1,5 @@
-﻿using Application.Features.ProgramingLanguages.Models;
+﻿using Application.Features.ProgramingLanguages.Constants;
+using Application.Features.ProgramingLanguages.Models;
 using Application.Services;
 using AutoMapper;
 using Core.Application.Pipelines.Authorization;
@@ -14,17 +15,18 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProgramingLanguages.Queries.GetListProgrammingLanguageByDynamic
 {
-    public class GetListProgrammingLanguageByDynamicQuery : IRequest<ProgrammingLanguageListModel>/*, ISecuredRequest*/
+    public class GetListProgrammingLanguageByDynamicQuery : IRequest<ProgrammingLanguageListModel>, ISecuredRequest
     {
 
         public Dynamic Dynamic { get; set; }
         public PageRequest PageRequest { get; set; }
 
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
-    //    ProgrammingLanguageRoles.ProgrammingLanguageRead
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageRead,
+        ProgrammingLanguageRoles.Admin
+    };
 
         /// <summary>
         /// Programlama dili için işleyici sınıfı

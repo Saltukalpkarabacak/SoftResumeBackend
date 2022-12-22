@@ -18,15 +18,16 @@ namespace Application.Features.UserOperationClaims.Queries.GetByIdUserOperationC
     /// <summary>
     /// Kullanıcı Operasyon Claim için sorgu sınıfı
     /// </summary>
-    public class GetByIdUserOperationClaimQuery : IRequest<UserOperationClaimGetByIdDto>/*, ISecuredRequest*/
+    public class GetByIdUserOperationClaimQuery : IRequest<UserOperationClaimGetByIdDto>, ISecuredRequest
     {
         public int Id { get; set; }
 
-        //    public string[] Roles { get; } =
-        //    {
-        //    UserOperationClaimRoles.UserOperationClaimAdmin,
-        //    UserOperationClaimRoles.UserOperationClaimRead
-        //};
+        public string[] Roles { get; } =
+        {
+            UserOperationClaimRoles.UserOperationClaimAdmin,
+            UserOperationClaimRoles.UserOperationClaimRead,
+            UserOperationClaimRoles.Admin
+        };
 
         /// <summary>
         /// Kullanıcı Operasyon Claim Getirmek için kullanılan işleyici sınıfıdır.

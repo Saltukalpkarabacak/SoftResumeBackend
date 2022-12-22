@@ -26,7 +26,8 @@ namespace Application.Features.UserSocialMediaAddresses.Commands.UpdateUserSocia
         public string[] Roles { get; } =
         {
         UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
-        UserSocialMediaAddressRoles.UserSocialMediaAddressUpdate
+        UserSocialMediaAddressRoles.UserSocialMediaAddressUpdate,
+        UserSocialMediaAddressRoles.Admin
     };
 
         /// <summary>

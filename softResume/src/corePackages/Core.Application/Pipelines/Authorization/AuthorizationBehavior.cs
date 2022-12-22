@@ -25,7 +25,11 @@ public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TReq
 
         bool isNotMatchedARoleClaimWithRequestRoles =
             roleClaims.FirstOrDefault(roleClaim => request.Roles.Any(role => role == roleClaim)).IsNullOrEmpty();
-        if (isNotMatchedARoleClaimWithRequestRoles) throw new AuthorizationException("You are not authorized.");
+
+        if (isNotMatchedARoleClaimWithRequestRoles)
+        {
+            throw new AuthorizationException("You are not authorized.");
+        }
 
         TResponse response = await next();
         return response;

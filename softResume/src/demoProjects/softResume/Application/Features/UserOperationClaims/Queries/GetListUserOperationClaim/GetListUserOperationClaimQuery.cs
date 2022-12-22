@@ -17,14 +17,15 @@ namespace Application.Features.UserOperationClaims.Queries.GetListUserOperationC
     /// <summary>
     /// Kullanıcı Operasyon Claim için sorgu sınıfı
     /// </summary>
-    public class GetListUserOperationClaimQuery : IRequest<UserOperationClaimListModel>/*, ISecuredRequest*/
+    public class GetListUserOperationClaimQuery : IRequest<UserOperationClaimListModel>, ISecuredRequest
     {
         public PageRequest PageRequest { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserOperationClaimRoles.UserOperationClaimAdmin,
-    //    UserOperationClaimRoles.UserOperationClaimRead
-    //};
+        public string[] Roles { get; } =
+        {
+        UserOperationClaimRoles.UserOperationClaimAdmin,
+        UserOperationClaimRoles.UserOperationClaimRead,
+        UserOperationClaimRoles.Admin
+    };
 
         /// <summary>
         /// Kullanıcı Operasyon Claim Listelemek için kullanılan işleyici sınıfıdır.

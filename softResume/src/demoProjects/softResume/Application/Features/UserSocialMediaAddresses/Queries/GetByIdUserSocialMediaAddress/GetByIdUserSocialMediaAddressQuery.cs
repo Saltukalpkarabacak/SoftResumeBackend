@@ -17,14 +17,15 @@ namespace Application.Features.UserSocialMediaAddresses.Queries.GetByIdUserSocia
     /// <summary>
     /// İstenilen kullanıcı sosyal medya adresi isteği
     /// </summary>
-    public class GetByIdUserSocialMediaAddressQuery : IRequest<UserSocialMediaAddressGetByIdDto>/*, ISecuredRequest*/
+    public class GetByIdUserSocialMediaAddressQuery : IRequest<UserSocialMediaAddressGetByIdDto>, ISecuredRequest
     {
         public int Id { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressRead
-    //};
+        public string[] Roles { get; } =
+        {
+        UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
+        UserSocialMediaAddressRoles.UserSocialMediaAddressRead,
+        UserSocialMediaAddressRoles.Admin
+    };
 
         /// <summary>
         /// Kullanıcı Sosyal Medya Adresi Getirmek için işleyici sınıfı.

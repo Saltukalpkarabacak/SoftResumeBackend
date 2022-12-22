@@ -1,4 +1,5 @@
-﻿using Application.Features.ProgramingLanguages.Dtos;
+﻿using Application.Features.ProgramingLanguages.Constants;
+using Application.Features.ProgramingLanguages.Dtos;
 using Application.Features.ProgramingLanguages.Rules;
 using Application.Services;
 using AutoMapper;
@@ -16,16 +17,17 @@ namespace Application.Features.ProgramingLanguages.Commands.UpdateProgrammingLan
     /// <summary>
     /// Programlama Dili güncellemek için kullanılan komut sınıfıdır.
     /// </summary>
-    public class UpdateProgrammingLanguageCommand : IRequest<UpdatedProgrammingLanguageDto>/*, ISecuredRequest*/
+    public class UpdateProgrammingLanguageCommand : IRequest<UpdatedProgrammingLanguageDto>, ISecuredRequest
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
-    //    ProgrammingLanguageRoles.ProgrammingLanguageUpdate
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageUpdate,
+        ProgrammingLanguageRoles.Admin
+    };
 
         /// <summary>
         /// Programlama Dili Güncellemek için kullanılan işleyici sınıfıdır.

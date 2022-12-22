@@ -18,15 +18,16 @@ namespace Application.Features.UserSocialMediaAddresses.Queries.GetListUserSocia
     /// <summary>
     /// Tüm kullanıcıların sosyal medya adresi isteği
     /// </summary>
-    public class GetListUserSocialMediaAddressByDynamicQuery : IRequest<UserSocialMediaAddressListModel>/*, ISecuredRequest*/
+    public class GetListUserSocialMediaAddressByDynamicQuery : IRequest<UserSocialMediaAddressListModel>, ISecuredRequest
     {
         public Dynamic Dynamic { get; set; }
         public PageRequest PageRequest { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressRead
-    //};
+        public string[] Roles { get; } =
+        {
+        UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
+        UserSocialMediaAddressRoles.UserSocialMediaAddressRead,
+        UserSocialMediaAddressRoles.Admin
+    };
 
         /// <summary>
         /// Tüm kullanıcıların sosyal medya adresi için işleyici sınıfı

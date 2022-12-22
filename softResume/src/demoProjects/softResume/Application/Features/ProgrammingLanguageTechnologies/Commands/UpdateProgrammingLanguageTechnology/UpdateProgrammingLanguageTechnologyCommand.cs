@@ -26,7 +26,8 @@ namespace Application.Features.ProgrammingLanguageTechnologies.Commands.UpdatePr
         public string[] Roles { get; } =
         {
         ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
-        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyUpdate
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyUpdate,
+        ProgrammingLanguageTechnologyRoles.Admin
     };
 
         /// <summary>

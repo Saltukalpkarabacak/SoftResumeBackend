@@ -16,14 +16,15 @@ namespace Application.Features.UserSocialMediaAddresses.Commands.DeleteUserSocia
     /// <summary>
     /// Silinecek Kullanıcı Sosyal Medya Adresinin İstek Komutudur.
     /// </summary>
-    public class DeleteUserSocialMediaAddressCommand : IRequest<DeletedUserSocialMediaAddressDto>/*, ISecuredRequest*/
+    public class DeleteUserSocialMediaAddressCommand : IRequest<DeletedUserSocialMediaAddressDto>, ISecuredRequest
     {
         public int Id { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressDelete
-    //};
+        public string[] Roles { get; } =
+        {
+        UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
+        UserSocialMediaAddressRoles.UserSocialMediaAddressDelete,
+        UserSocialMediaAddressRoles.Admin
+    };
 
         /// <summary>
         /// Silinecek Kullanıcı Sosyal Medya Adresinin İşleyici Sınıfıdır.

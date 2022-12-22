@@ -1,4 +1,5 @@
-﻿using Application.Features.ProgramingLanguages.Dtos;
+﻿using Application.Features.ProgramingLanguages.Constants;
+using Application.Features.ProgramingLanguages.Dtos;
 using Application.Features.ProgramingLanguages.Rules;
 using Application.Services;
 using AutoMapper;
@@ -16,14 +17,15 @@ namespace Application.Features.ProgramingLanguages.Commands.DeleteProgrammingLan
     /// <summary>
     /// Programlama Dili silmek için kullanılan komut sınıfıdır.
     /// </summary>
-    public class DeleteProgrammingLanguageCommand : IRequest<DeletedProgrammingLanguageDto>/*, ISecuredRequest*/
+    public class DeleteProgrammingLanguageCommand : IRequest<DeletedProgrammingLanguageDto>, ISecuredRequest
     {
         public int Id { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
-    //    ProgrammingLanguageRoles.ProgrammingLanguageDelete
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageDelete,
+        ProgrammingLanguageRoles.Admin
+    };
 
         /// <summary>
         /// Programlama Dili Silmek için kullanılan işleyici sınıfıdır.

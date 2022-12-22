@@ -1,4 +1,5 @@
-﻿using Application.Features.ProgramingLanguages.Dtos;
+﻿using Application.Features.ProgramingLanguages.Constants;
+using Application.Features.ProgramingLanguages.Dtos;
 using Application.Features.ProgramingLanguages.Rules;
 using Application.Services;
 using AutoMapper;
@@ -16,15 +17,16 @@ namespace Application.Features.ProgramingLanguages.Queries.GetByIdProgrammingLan
     /// <summary>
     /// Programlama dili için sorgu sınıfı
     /// </summary>
-    public class GetByIdProgrammingLanguageQuery : IRequest<ProgrammingLanguageGetByIdDto>/*, ISecuredRequest*/
+    public class GetByIdProgrammingLanguageQuery : IRequest<ProgrammingLanguageGetByIdDto>, ISecuredRequest
     {
         public int Id { get; set; }
 
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
-    //    ProgrammingLanguageRoles.ProgrammingLanguageRead
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageRead,
+        ProgrammingLanguageRoles.Admin
+    };
 
         /// <summary>
         /// Programlama Dili Getirmek için kullanılan işleyici sınıfıdır.

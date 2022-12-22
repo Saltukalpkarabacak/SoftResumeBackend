@@ -11,15 +11,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Features.UserSocialMediaAddresses.Constants;
 
 namespace Application.Features.ProgramingLanguages.Commands.CreateProgrammingLanguage
 {
     /// <summary>
     /// Programlama Dili eklemek için kullanılan komut sınıfıdır.
     /// </summary>
-    public class CreateProgrammingLanguageCommand : IRequest<CreatedProgrammingLanguageDto>
+    public class CreateProgrammingLanguageCommand : IRequest<CreatedProgrammingLanguageDto>,ISecuredRequest
     {
         public string Name { get; set; }
+
+        public string[] Roles { get; } =
+   {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageCreate,
+        ProgrammingLanguageRoles.Admin
+    };
 
 
         /// <summary>

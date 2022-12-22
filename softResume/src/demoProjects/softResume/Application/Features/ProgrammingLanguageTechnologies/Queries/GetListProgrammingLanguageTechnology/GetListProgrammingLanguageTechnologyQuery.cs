@@ -18,14 +18,15 @@ namespace Application.Features.ProgrammingLanguageTechnologies.Queries.GetListPr
     /// <summary>
     /// Programlama dili teknolojisi için sorgu sınıfı
     /// </summary>
-    public class GetListProgrammingLanguageTechnologyQuery : IRequest<ProgrammingLanguageTechnologyListModel>/*, ISecuredRequest*/
+    public class GetListProgrammingLanguageTechnologyQuery : IRequest<ProgrammingLanguageTechnologyListModel>, ISecuredRequest
     {
         public PageRequest PageRequest { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyRead
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyRead,
+        ProgrammingLanguageTechnologyRoles.Admin
+    };
 
         /// <summary>
         /// Programlama teknolojisi için işleyici sınıfı

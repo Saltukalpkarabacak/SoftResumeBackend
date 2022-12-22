@@ -17,15 +17,16 @@ namespace Application.Features.UserOperationClaims.Commands.CreateUserOperationC
     /// <summary>
     /// Kullanıcı Operasyon claim oluşturma komutu
     /// </summary>
-    public class CreateUserOperationClaimCommand : IRequest<CreatedUserOperationClaimDto>/*, ISecuredRequest*/
+    public class CreateUserOperationClaimCommand : IRequest<CreatedUserOperationClaimDto>, ISecuredRequest
     {
         public int UserId { get; set; }
         public int OperationClaimId { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserOperationClaimRoles.UserOperationClaimAdmin,
-    //    UserOperationClaimRoles.UserOperationClaimCreate
-    //};
+        public string[] Roles { get; } =
+        {
+        UserOperationClaimRoles.UserOperationClaimAdmin,
+        UserOperationClaimRoles.UserOperationClaimCreate,
+        UserOperationClaimRoles.Admin
+    };
 
         /// <summary>
         /// Kullanıcı Operasyon claim oluşturma işleyicisi

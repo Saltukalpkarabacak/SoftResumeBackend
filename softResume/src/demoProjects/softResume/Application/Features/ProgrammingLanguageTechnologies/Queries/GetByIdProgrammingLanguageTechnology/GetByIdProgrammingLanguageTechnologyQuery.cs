@@ -18,15 +18,16 @@ namespace Application.Features.ProgrammingLanguageTechnologies.Queries.GetByIdPr
     /// <summary>
     /// Programlama dili teknolojisi için sorgu sınıfı
     /// </summary>
-    public class GetByIdProgrammingLanguageTechnologyQuery : IRequest<ProgrammingLanguageTechnologyGetByIdDto>/*, ISecuredRequest*/
+    public class GetByIdProgrammingLanguageTechnologyQuery : IRequest<ProgrammingLanguageTechnologyGetByIdDto>, ISecuredRequest
     {
         public int Id { get; set; }
 
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyRead
-    //};
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
+        ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyRead,
+        ProgrammingLanguageTechnologyRoles.Admin
+    };
 
         /// <summary>
         /// Programlama dili teknolojisi için işleyici sınıf

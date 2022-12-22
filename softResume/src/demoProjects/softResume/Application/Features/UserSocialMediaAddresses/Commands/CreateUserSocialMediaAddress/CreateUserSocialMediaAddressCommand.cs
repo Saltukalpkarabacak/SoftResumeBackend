@@ -19,15 +19,16 @@ namespace Application.Features.UserSocialMediaAddresses.Commands.CreateUserSocia
     /// <summary>
     /// Oluşturlacak Kullanıcı Sosyal Medya Adresinin İstek Komutudur.
     /// </summary>
-    public class CreateUserSocialMediaAddressCommand : IRequest<CreatedUserSocialMediaAddressDto>/*, ISecuredRequest*/
+    public class CreateUserSocialMediaAddressCommand : IRequest<CreatedUserSocialMediaAddressDto>, ISecuredRequest
     {
         public int UserId { get; set; }
         public string GithubUrl { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
-    //    UserSocialMediaAddressRoles.UserSocialMediaAddressCreate
-    //};
+        public string[] Roles { get; } =
+        {
+        UserSocialMediaAddressRoles.UserSocialMediaAddressAdmin,
+        UserSocialMediaAddressRoles.UserSocialMediaAddressCreate,
+        UserSocialMediaAddressRoles.Admin
+    };
 
         /// <summary>
         /// Oluşturlacak Kullanıcı Sosyal Medya Adresinin İşleyici Sınıfıdır.

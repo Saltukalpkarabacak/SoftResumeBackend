@@ -9,6 +9,7 @@ namespace Application.Features.UserSocialMediaAddresses.Constants
     public class UserSocialMediaAddressRoles
     {
         public const string UserSocialMediaAddressAdmin = "UserSocialMediaAddress.Admin";
+        public const string Admin = "Admin";
         public const string UserSocialMediaAddressUser = "UserSocialMediaAddress.User";
 
         public const string UserSocialMediaAddressCreate = "UserSocialMediaAddress.Create";

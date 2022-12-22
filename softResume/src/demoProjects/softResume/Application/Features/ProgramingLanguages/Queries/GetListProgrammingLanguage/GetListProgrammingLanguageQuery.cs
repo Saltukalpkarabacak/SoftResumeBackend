@@ -10,17 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Application.Features.ProgramingLanguages.Constants;
 
 namespace Application.Features.ProgramingLanguages.Queries.GetListProgrammingLanguage
 {
     /// <summary>
     /// Programlama dili için sorgu sınıfı
     /// </summary>
-    public class GetListProgrammingLanguageQuery : IRequest<ProgrammingLanguageListModel>
+    public class GetListProgrammingLanguageQuery : IRequest<ProgrammingLanguageListModel>,ISecuredRequest
     {
         public PageRequest PageRequest { get; set; }
 
-        
+        public string[] Roles { get; } =
+        {
+        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+        ProgrammingLanguageRoles.ProgrammingLanguageRead,
+        ProgrammingLanguageRoles.Admin
+    };
 
         /// <summary>
         /// Programlama Dili Listelemek için kullanılan işleyici sınıfıdır.

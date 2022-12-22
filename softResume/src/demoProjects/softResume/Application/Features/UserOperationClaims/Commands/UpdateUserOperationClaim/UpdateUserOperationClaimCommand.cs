@@ -16,16 +16,17 @@ namespace Application.Features.UserOperationClaims.Commands.UpdateUserOperationC
     /// <summary>
     /// Kullanıcı Operasyon claim güncelleme komutu
     /// </summary>
-    public class UpdateUserOperationClaimCommand : IRequest<UpdatedUserOperationClaimDto>/*, ISecuredRequest*/
+    public class UpdateUserOperationClaimCommand : IRequest<UpdatedUserOperationClaimDto>, ISecuredRequest
     {
         public int Id { get; set; }
         public int UserId { get; set; }
         public int OperationClaimId { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    UserOperationClaimRoles.UserOperationClaimAdmin,
-    //    UserOperationClaimRoles.UserOperationClaimUpdate
-    //};
+        public string[] Roles { get; } =
+        {
+        UserOperationClaimRoles.UserOperationClaimAdmin,
+        UserOperationClaimRoles.UserOperationClaimUpdate,
+        UserOperationClaimRoles.Admin
+    };
 
         /// <summary>
         /// Kullanıcı Operasyon claim güncelleme işleyicisi

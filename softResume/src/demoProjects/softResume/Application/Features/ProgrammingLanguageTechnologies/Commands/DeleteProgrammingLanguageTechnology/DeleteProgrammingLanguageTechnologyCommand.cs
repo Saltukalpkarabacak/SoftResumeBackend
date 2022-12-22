@@ -16,14 +16,15 @@ namespace Application.Features.ProgrammingLanguageTechnologies.Commands.DeletePr
     /// <summary>
     /// Programlama dili teknolojisi silme komutu
     /// </summary>
-    public class DeleteProgrammingLanguageTechnologyCommand : IRequest<DeletedProgrammingLanguageTechnologyDto>/*, ISecuredRequest*/
+    public class DeleteProgrammingLanguageTechnologyCommand : IRequest<DeletedProgrammingLanguageTechnologyDto>, ISecuredRequest
     {
         public int Id { get; set; }
-    //    public string[] Roles { get; } =
-    //    {
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
-    //    ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyDelete
-    //};
+        public string[] Roles { get; } =
+        {
+            ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyAdmin,
+            ProgrammingLanguageTechnologyRoles.ProgrammingLanguageTechnologyDelete,
+            ProgrammingLanguageTechnologyRoles.Admin
+        };
 
         /// <summary>
         /// Programlama Dili Teknolojisi Silmek için kullanılan işleyici sınıfıdır.

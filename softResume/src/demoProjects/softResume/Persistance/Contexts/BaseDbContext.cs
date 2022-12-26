@@ -19,6 +19,7 @@ namespace Persistance.Contexts
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
         public DbSet<ProgrammingLanguageTechnology> ProgrammingLanguageTechnologies { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserProgramingTechnolgy> UserProgramingTechnolgies { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<UserSocialMediaAddress> UserSocialMediaAddresses { get; set; }
@@ -56,6 +57,17 @@ namespace Persistance.Contexts
                 p.Property(x => x.GithubUrl).HasColumnName("GithubUrl");
                 p.HasOne(x => x.User);
             });
+
+            modelBuilder.Entity<UserProgramingTechnolgy>(p =>
+            {
+                p.ToTable("UserProgramingTechnolgies").HasKey(x => x.Id);
+                p.Property(x => x.Id).HasColumnName("Id");
+                p.Property(x => x.UserId).HasColumnName("UserId");
+                p.Property(x => x.TechnologyId).HasColumnName("TechnologyId");
+                p.HasOne(x => x.User);
+                p.HasOne(x => x.ProgrammingLanguageTechnology);
+            });
+
 
             modelBuilder.Entity<User>(p =>
             {
@@ -138,7 +150,7 @@ namespace Persistance.Contexts
             //Not: İlk User Kayıt Olduktan Sonra Bu İşlem Yapılmalıdır.
             // UserSocialMediaAddress[] userSocialMediaAddressEntitySeeds =
             // {
-            //     new(1,1,"https://github.com/furkanpasaoglu")
+            //     new(1,1,"https://github.com/Saltukalpkarabacak")
             // };
             // modelBuilder.Entity<UserSocialMediaAddress>().HasData(userSocialMediaAddressEntitySeeds);
         }

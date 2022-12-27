@@ -17,16 +17,16 @@ namespace Application.Features.ProgramingLanguages.Queries.GetListProgrammingLan
     /// <summary>
     /// Programlama dili için sorgu sınıfı
     /// </summary>
-    public class GetListProgrammingLanguageQuery : IRequest<ProgrammingLanguageListModel>,ISecuredRequest
+    public class GetListProgrammingLanguageQuery : IRequest<ProgrammingLanguageListModel>/*,ISecuredRequest*/
     {
         public PageRequest PageRequest { get; set; }
 
-        public string[] Roles { get; } =
-        {
-        ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
-        ProgrammingLanguageRoles.ProgrammingLanguageRead,
-        ProgrammingLanguageRoles.Admin
-    };
+    //    public string[] Roles { get; } =
+    //    {
+    //    ProgrammingLanguageRoles.ProgrammingLanguageAdmin,
+    //    ProgrammingLanguageRoles.ProgrammingLanguageRead,
+    //    ProgrammingLanguageRoles.Admin
+    //};
 
         /// <summary>
         /// Programlama Dili Listelemek için kullanılan işleyici sınıfıdır.

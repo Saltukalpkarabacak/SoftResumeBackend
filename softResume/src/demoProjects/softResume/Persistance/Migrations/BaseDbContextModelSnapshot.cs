@@ -279,7 +279,7 @@ namespace Persistance.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.UserProgramingTechnolgy", b =>
+            modelBuilder.Entity("Domain.Entities.UserProgramingTechnology", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -288,24 +288,23 @@ namespace Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ProgrammingLanguageTechnologyId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TechnologyId")
-                        .HasColumnType("int")
-                        .HasColumnName("TechnologyId");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int")
                         .HasColumnName("UserId");
 
+
+                    b.Property<int>("TechnologyId")
+                        .HasColumnType("int")
+                        .HasColumnName("TechnologyId");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ProgrammingLanguageTechnologyId");
+                    b.HasIndex("TechnologyId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserProgramingTechnolgies", (string)null);
+                    b.ToTable("UserProgramingTechnologies", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.UserSocialMediaAddress", b =>
@@ -374,22 +373,7 @@ namespace Persistance.Migrations
                     b.Navigation("ProgrammingLanguage");
                 });
 
-            modelBuilder.Entity("Domain.Entities.UserProgramingTechnolgy", b =>
-                {
-                    b.HasOne("Domain.Entities.ProgrammingLanguageTechnology", "ProgrammingLanguageTechnology")
-                        .WithMany()
-                        .HasForeignKey("ProgrammingLanguageTechnologyId");
-
-                    b.HasOne("Core.Security.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProgrammingLanguageTechnology");
-
-                    b.Navigation("User");
-                });
+           
 
             modelBuilder.Entity("Domain.Entities.UserSocialMediaAddress", b =>
                 {
@@ -413,6 +397,7 @@ namespace Persistance.Migrations
                 {
                     b.Navigation("ProgrammingLanguageTechnologies");
                 });
+           
 #pragma warning restore 612, 618
         }
     }

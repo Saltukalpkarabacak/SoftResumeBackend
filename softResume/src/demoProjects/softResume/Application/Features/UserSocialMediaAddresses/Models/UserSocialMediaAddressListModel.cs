@@ -1,4 +1,6 @@
-﻿using Core.Persistence.Paging;
+﻿using Application.Features.ProgrammingLanguageTechnologies.Dtos;
+using Application.Features.UserSocialMediaAddresses.Dtos;
+using Core.Persistence.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,6 @@ namespace Application.Features.UserSocialMediaAddresses.Models
     /// </summary>
     public class UserSocialMediaAddressListModel : BasePageableModel
     {
-
+        public IList<UserSocialMediaAddressListDto> Items { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Domain.Entities
     public class UserProgramingTechnolgy : Entity
     {
         public int UserId { get; set; }
-        public int TechnologyId { get; set; }
+        public int ProgrammingLanguageTechnologyId { get; set; }
 
         public virtual User? User { get; }
         public virtual ProgrammingLanguageTechnology? ProgrammingLanguageTechnology { get; set; }
@@ -24,7 +24,7 @@ namespace Domain.Entities
         {
             Id = id;
             UserId = userId;
-            TechnologyId = technologyId;
+            ProgrammingLanguageTechnologyId = technologyId;
         }
     }
 }

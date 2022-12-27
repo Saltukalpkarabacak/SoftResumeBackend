@@ -23,6 +23,7 @@ namespace Persistance.Contexts
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<UserSocialMediaAddress> UserSocialMediaAddresses { get; set; }
+
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
@@ -49,6 +50,8 @@ namespace Persistance.Contexts
                 p.HasOne(x => x.ProgrammingLanguage);
             });
 
+            
+
             modelBuilder.Entity<UserSocialMediaAddress>(p =>
             {
                 p.ToTable("UserSocialMediaAddresses").HasKey(x => x.Id);
@@ -63,10 +66,11 @@ namespace Persistance.Contexts
                 p.ToTable("UserProgramingTechnolgies").HasKey(x => x.Id);
                 p.Property(x => x.Id).HasColumnName("Id");
                 p.Property(x => x.UserId).HasColumnName("UserId");
-                p.Property(x => x.TechnologyId).HasColumnName("TechnologyId");
+                p.Property(x => x.ProgrammingLanguageTechnologyId).HasColumnName("ProgrammingLanguageTechnologyId");
                 p.HasOne(x => x.User);
                 p.HasOne(x => x.ProgrammingLanguageTechnology);
             });
+
 
 
             modelBuilder.Entity<User>(p =>

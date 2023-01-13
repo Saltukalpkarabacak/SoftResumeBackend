@@ -18,9 +18,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\UserProgramingTechnologies\Commands\" />
-    <Folder Include="Features\UserProgramingTechnologies\Rules\" />
-  </ItemGroup>
-
 </Project>

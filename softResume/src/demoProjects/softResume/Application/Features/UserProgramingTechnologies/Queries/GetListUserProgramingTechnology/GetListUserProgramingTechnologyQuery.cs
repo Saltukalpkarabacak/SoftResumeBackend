@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.UserProgramingTechnologies.Queries
+namespace Application.Features.UserProgramingTechnologies.Queries.GetListUserProgramingTechnology
 {
     public class GetListUserProgramingTechnologyQuery : IRequest<UserProgramingTechnologyListModel>
     {
@@ -22,7 +22,7 @@ namespace Application.Features.UserProgramingTechnologies.Queries
 
         public class GetListUserProgramingTechnologyQueryHandler : IRequestHandler<GetListUserProgramingTechnologyQuery, UserProgramingTechnologyListModel>
         {
-            private readonly IUserProgramingTechnologyRepository _userProgramingTechnologyRepository;   
+            private readonly IUserProgramingTechnologyRepository _userProgramingTechnologyRepository;
             private readonly IMapper _mapper;
 
             public GetListUserProgramingTechnologyQueryHandler(IUserProgramingTechnologyRepository userProgramingTechnologyRepository, IMapper mapper)
@@ -31,7 +31,7 @@ namespace Application.Features.UserProgramingTechnologies.Queries
                 _mapper = mapper;
             }
 
-            public async Task<UserProgramingTechnologyListModel>Handle(GetListUserProgramingTechnologyQuery request,CancellationToken cancellationToken)
+            public async Task<UserProgramingTechnologyListModel> Handle(GetListUserProgramingTechnologyQuery request, CancellationToken cancellationToken)
             {
                 var userProgramingTechnolgy = await _userProgramingTechnologyRepository.GetListAsync(include: m =>
                         m.Include(c => c.User).Include(c => c.ProgrammingLanguageTechnology),

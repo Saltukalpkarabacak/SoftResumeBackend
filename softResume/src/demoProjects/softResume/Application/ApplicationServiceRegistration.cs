@@ -3,6 +3,7 @@ using Application.Features.OperationClaims.Rules;
 using Application.Features.ProgramingLanguages.Rules;
 using Application.Features.ProgrammingLanguageTechnologies.Rules;
 using Application.Features.UserOperationClaims.Rules;
+using Application.Features.UserProgramingTechnologies.Rules;
 using Application.Features.UserSocialMediaAddresses.Rules;
 using Application.Services.AuthService;
 using Core.Application.Pipelines.Authorization;
@@ -30,6 +31,7 @@ namespace Application
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<ProgrammingTechnologyBusinessRules>();
+            services.AddScoped<UserProgramingTechnologyRules>();
             services.AddScoped<AuthBusinessRules>();
             services.AddScoped<UserSocialMediaAddressBusinessRules>();
             services.AddScoped<UserOperationClaimBusinessRules>();
